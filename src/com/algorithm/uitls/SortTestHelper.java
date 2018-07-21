@@ -18,6 +18,28 @@ public class SortTestHelper {
     }
 
     /**
+     * 生成较为有序的数组
+     * @param n 数组长度
+     * @param swapTimes 交换对数
+     * @return
+     */
+    public static int[] generateNearyOrdereArray(int n, int swapTimes) {
+        Random random = new Random();
+        int[] arr = new int[n];
+        for(int i = 0; n > i; i++) {
+            arr[i] = i;
+        }
+        for (int i = 0; swapTimes > i; i++  ) {
+            int posX = Math.abs( random.nextInt() ) % n;
+            int posY = Math.abs( random.nextInt() ) % n;
+            int temp = arr[posX];
+            arr[posX] = arr[posY] ;
+            arr[posY] = temp;
+        }
+        return arr;
+    }
+
+    /**
      * 输出数组
      * @param arr
      */
@@ -26,5 +48,8 @@ public class SortTestHelper {
             System.out.print(arr[i] + "   ");
     }
 
-
+    public static void main(String[] args) {
+        int[] arr = generateNearyOrdereArray(100, 5);
+        printArray(arr);
+    }
 }
