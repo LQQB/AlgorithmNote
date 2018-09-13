@@ -40,6 +40,18 @@ public class SortTestHelper {
     }
 
     /**
+     *
+     *  交换数组的两个元素
+     *
+     */
+    public static void exchange(int[] nums, int x, int y) {
+        int temp = nums[x];
+        nums[x]  = nums[y];
+        nums[y]  = temp;
+    }
+
+
+    /**
      * 输出数组
      * @param arr
      */

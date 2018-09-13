@@ -21,9 +21,7 @@ public class BubbleSort {
             change = false;
             for(int j=args.length-1;j>i;j--){  //这里从右向左扫描
                 if(args[j]<args[j-1]) {
-                    int temp = args[j];
-                    args[j] = args[j-1];
-                    args[j-1] = temp;
+                    SortTestHelper.exchange(args, j, j-1);
                     change = true;  // 当一趟比较之后，如果有元素的交换就把change设置为TRUE
                 }
             }

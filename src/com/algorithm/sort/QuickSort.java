@@ -18,8 +18,41 @@ public class QuickSort {
      * @param arr
      */
     public static void  quickSort(int[] arr) {
-
+        __quickSort(arr, 0, arr.length-1);
     }
+
+
+    // 对 arr[l ... r] 部分进行快速排序
+    private static void __quickSort(int[] arr, int l, int r) {
+
+        if(l >= r) return;
+
+        int p = __partition(arr, l, r);     //
+        __quickSort(arr, l, p-1);   // 递归左侧数组
+        __quickSort(arr, p+1, r);   // 递归右侧数组
+    }
+
+
+    // 对 arr[l ... r] 部分进行 partition 操作
+    // 返回 p(基准数), 使得arr[l ... p-1] < arr[p] ; arr[p+1 .... r] > arr[p]
+    private static int __partition(int[] arr, int l, int r) {
+
+        int v = arr[l];
+
+        int j = l;
+        for(int i = l + 1; i <= r; i++) {
+            if( arr[i] < v) {
+                SortTestHelper.exchange(arr, j+1, i);
+                j ++;
+            }
+        }
+        SortTestHelper.exchange(arr, l, j);
+        return j;
+    }
+
+
+
+
 
     public static void main(String[] args) {
 
