@@ -18,7 +18,7 @@ public class SortTestHelper {
     }
 
     /**
-     * 生成较为有序的数组
+     * 生成较为近乎有序的数组
      * @param n 数组长度
      * @param swapTimes 交换对数
      * @return
@@ -37,6 +37,14 @@ public class SortTestHelper {
             arr[posY] = temp;
         }
         return arr;
+    }
+
+    /**
+     * 生成随机数
+     * @return
+     */
+    public static int ranInt() {
+        return new Random().nextInt();
     }
 
     /**

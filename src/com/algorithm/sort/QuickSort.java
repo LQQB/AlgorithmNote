@@ -2,6 +2,8 @@ package com.algorithm.sort;
 
 import com.algorithm.uitls.SortTestHelper;
 
+import java.util.Random;
+
 /**
  * @author LiQB
  * @Title:
@@ -37,6 +39,8 @@ public class QuickSort {
     // 返回 p(基准数), 使得arr[l ... p-1] < arr[p] ; arr[p+1 .... r] > arr[p]
     private static int __partition(int[] arr, int l, int r) {
 
+        SortTestHelper.exchange( arr, l, SortTestHelper.ranInt()%(r - l + 1) );
+
         int v = arr[l];
 
         int j = l;
@@ -57,7 +61,9 @@ public class QuickSort {
     public static void main(String[] args) {
 
         int n = 100000;
-        int[] arr = SortTestHelper.generateRandomArray(n, 0, n);
+//        int[] arr = SortTestHelper.generateRandomArray(n, 0, n);
+
+        int[] arr = SortTestHelper.generateNearyOrdereArray(n, 100);
         long startTime = System.currentTimeMillis();
         quickSort(arr);
         long endTime = System.currentTimeMillis() ;
