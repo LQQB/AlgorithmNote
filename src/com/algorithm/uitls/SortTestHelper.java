@@ -44,7 +44,7 @@ public class SortTestHelper {
      * @return
      */
     public static int ranInt() {
-        return new Random().nextInt();
+        return Math.abs( new Random().nextInt() );
     }
 
     /**

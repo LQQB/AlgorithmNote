@@ -60,7 +60,7 @@ public class QuickSort {
 
     public static void main(String[] args) {
 
-        int n = 100000;
+        int n = 10000;
 //        int[] arr = SortTestHelper.generateRandomArray(n, 0, n);
 
         int[] arr = SortTestHelper.generateNearyOrdereArray(n, 100);
