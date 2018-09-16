@@ -38,8 +38,7 @@ public class QuickSort {
     // 对 arr[l ... r] 部分进行 partition 操作
     // 返回 p(基准数), 使得arr[l ... p-1] < arr[p] ; arr[p+1 .... r] > arr[p]
     private static int __partition(int[] arr, int l, int r) {
-
-        SortTestHelper.exchange( arr, l, SortTestHelper.ranInt()%(r - l + 1) );
+        SortTestHelper.exchange( arr, l, (SortTestHelper.ranInt()%(r - l + 1)) + l);
 
         int v = arr[l];
 
@@ -60,7 +59,7 @@ public class QuickSort {
 
     public static void main(String[] args) {
 
-        int n = 10000;
+        int n = 100000;
 //        int[] arr = SortTestHelper.generateRandomArray(n, 0, n);
 
         int[] arr = SortTestHelper.generateNearyOrdereArray(n, 100);
